@@ -1,0 +1,61 @@
+package com.srccodes.spring.SpringProject.controller;
+
+public class DemoPassByValueAndReference
+{
+	public static void main(String[] args)
+	{
+		System.out.println("----------------------");
+		System.out.println("Primitive Type:");
+		int primitiveVariable = 20;
+		System.out.println(primitiveVariable); 
+		changePrimitiveVariable(primitiveVariable);
+		System.out.println(primitiveVariable); 
+		System.out.println("End OF Primitive Type");
+		System.out.println("----------------------");
+		
+		System.out.println("----------------------");
+		System.out.println("Muatable Types");
+		StringBuffer sb = new StringBuffer("Hi Friends!");
+		System.out.println(sb);
+		changeStringBufer(sb);
+		System.out.println(sb);
+		System.out.println("End Of Muatable Types");
+		System.out.println("----------------------");
+		
+		System.out.println("----------------------");
+		System.out.println("Imuatable Types");
+		String s = "Is this Fun!";
+		System.out.println(s); 
+		 changeString(s);
+		System.out.println(s); 
+		s = changeImutableValue(s);
+		System.out.println("End of Imuatable Types");
+		System.out.println("----------------------");
+	}
+
+
+	private static void changePrimitiveVariable(int i)
+	{
+		i = 10; 
+		System.out.println(i); 
+	}
+
+	private static void changeStringBufer(StringBuffer sbTest)
+	{
+		sbTest = sbTest.append("How are you all?"); 
+		System.out.println(sbTest);
+	}
+
+	private static void changeString(String sTest)
+	{
+		sTest = sTest+"Yes it is!";
+		System.out.println(sTest);
+		
+	}
+	private static String changeImutableValue(String sTest) {
+		
+		sTest = new String ("yes is is!!");
+		System.out.println(sTest);
+		return sTest;
+	}
+}
